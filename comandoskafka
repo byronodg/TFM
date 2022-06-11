@@ -1,0 +1,14 @@
+
+sudo /home/byron/Downloads/confluent-4.1.1/bin/zookeeper-server-start /home/byron/Downloads/confluent-4.1.1/etc/kafka/zookeeper.properties
+
+sudo /home/byron/Downloads/confluent-4.1.1/bin/kafka-server-start /home/byron/Downloads/confluent-4.1.1/etc/kafka/server.properties
+
+
+sudo /home/byron/Downloads/confluent-4.1.1/bin/connect-standalone /home/byron/Downloads/confluent-4.1.1/etc/kafka/connect-standalone.properties /home/byron/Downloads/confluent-4.1.1/etc/kafka/fuente_declaraciones.properties
+
+
+
+sudo /home/byron/Downloads/confluent-4.1.1/bin/kafka-topics --delete --zookeeper localhost:2181 --topic topic_DECLARACIONES
+
+
+sudo /home/byron/Downloads/confluent-4.1.1/bin/kafka-console-consumer --bootstrap-server localhost:9092 --topic topic_DECLARACIONES1 --from-beginning
